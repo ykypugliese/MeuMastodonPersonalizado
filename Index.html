@@ -3,107 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Fans - Cadastro</title>
-    <style>
-        /* Fonte estilo iPhone */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(to bottom, #8b0000, #2b2b2b); /* Fundo vermelho escuro */
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        /* Container centralizado */
-        .container {
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
-            padding: 40px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            margin: 20px;
-        }
-
-        /* Logo no topo */
-        .logo {
-            width: 200px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Estilos para os inputs */
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        /* Estilo do botão */
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #ff4500;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            color: #fff;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #ff6347;
-        }
-
-        /* Links */
-        a {
-            display: block;
-            color: #ff6347;
-            margin-top: 10px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+    <title>Cadastro - Hot Fans</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao CSS para estilo -->
 </head>
 <body>
-    <div class="container">
-        <!-- Logo no topo -->
-        <img src="Minhalogo.png" alt="Logo do Hot Fans" style="width: 200px; margin-bottom: 20px;">
+    <header>
+        <div class="logo">
+            <img src="minhalogo.png" alt="Logo Hot Fans">
+        </div>
+        <h1>Cadastro no Hot Fans</h1>
+    </header>
+    <main>
+        <form action="submit-form.php" method="post">
+            <label for="username">Nome de Usuário</label>
+            <input type="text" id="username" name="username" required>
 
-        <!-- Título -->
-        <h1>Bem-vindo ao Hot Fans</h1>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
 
-        <!-- Formulário de login -->
-        <form>
-            <input type="text" placeholder="Digite seu usuário" required>
-            <input type="password" placeholder="Digite sua senha" required>
-            <button type="submit">Fazer Login</button>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Criar Conta</button>
         </form>
 
-        <!-- Botão de cadastro -->
-        <button onclick="window.location.href='cadastro.html'">Criar Conta</button>
-
-        <!-- Links para políticas -->
-        <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a>
-        <a href="termos-de-uso.html" target="_blank">Termos de Uso</a>
-    </div>
+        <div class="links">
+            <p>Já tem uma conta? <a href="login.html">Fazer Login</a></p>
+            <p><a href="politica-privacidade.html">Política de Privacidade</a> | <a href="termos-uso.html">Termos de Uso</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Hot Fans. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
