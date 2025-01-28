@@ -1,0 +1,71 @@
+/* Corpo principal */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #2d2d2d; /* Fundo escuro com tom avermelhado */
+    color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    background-color: #800000; /* Vermelho escuro */
+    padding: 20px 0;
+}
+header .logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+header h1 {
+    font-size: 1.8em;
+}
+
+/* Seção principal */
+main {
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    background: #4c0000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulários */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form button {
+    background-color: #800000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+form button:hover {
+    background-color: #660000;
+}
+
+/* Links do rodapé */
+footer p {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+footer a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
