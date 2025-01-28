@@ -1,39 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Hot Fans</title>
-    <link rel="stylesheet" href="style.css"> <!-- Referência ao CSS para estilo -->
+    <title>CriAtiva - Conectando Marcas e Criadores</title>
+    <style>
+        /* Estilo Global */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #6A0DAD; /* Roxo como cor principal */
+            color: #fff; /* Texto branco para contraste */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+        header p {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #4b0082; /* Um tom mais escuro de roxo */
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #fff;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+        nav a i {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .login-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+            text-align: left;
+        }
+        .login-popup input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6A0DAD;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-popup button:hover {
+            background-color: #540c9b;
+        }
+        .login-popup .close-btn {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6A0DAD;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="minhalogo.png" alt="Logo Hot Fans">
-        </div>
-        <h1>Cadastro no Hot Fans</h1>
+        <h1>CriAtiva</h1>
+        <p>Conectando Marcas e Criadores</p>
     </header>
-    <main>
-        <form action="submit-form.php" method="post">
-            <label for="username">Nome de Usuário</label>
-            <input type="text" id="username" name="username" required>
+    <div class="container">
+        <h2>Bem-vindo à CriAtiva!</h2>
+        <p>Descubra um novo mundo de conexões e criações.</p>
+    </div>
+    <nav>
+        <a href="#"><i>🏠</i>Início</a>
+        <a href="#"><i>🔍</i>Pesquisa</a>
+        <a href="#" id="profile-icon"><i>👤</i>Perfil</a>
+        <a href="#"><i>🔔</i>Notificações</a>
+    </nav>
+    <div class="login-popup" id="login-popup">
+        <p><b>Faça login ou crie sua conta</b></p>
+        <input type="text" placeholder="Usuário ou Email">
+        <input type="password" placeholder="Senha">
+        <button>Entrar</button>
+        <button>Criar Conta</button>
+        <span class="close-btn" id="close-popup">Fechar</span>
+    </div>
+    <script>
+        const profileIcon = document.getElementById("profile-icon");
+        const loginPopup = document.getElementById("login-popup");
+        const closePopup = document.getElementById("close-popup");
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+        profileIcon.addEventListener("click", () => {
+            loginPopup.style.display = "block";
+        });
 
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Criar Conta</button>
-        </form>
-
-        <div class="links">
-            <p>Já tem uma conta? <a href="login.html">Fazer Login</a></p>
-            <p><a href="politica-privacidade.html">Política de Privacidade</a> | <a href="termos-uso.html">Termos de Uso</a></p>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 Hot Fans. Todos os direitos reservados.</p>
-    </footer>
+        closePopup.addEventListener("click", () => {
+            loginPopup.style.display = "none";
+        });
+    </script>
 </body>
 </html>
