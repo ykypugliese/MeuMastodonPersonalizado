@@ -9,27 +9,56 @@
         body {
             margin: 0;
             font-family: "Helvetica Neue", Arial, sans-serif;
-            background-color: #6A0DAD; /* Roxo como cor principal */
-            color: #fff; /* Texto branco para contraste */
+            background-color: #6A0DAD; /* Roxo */
+            color: #fff;
         }
         header {
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
+            background-color: #4b0082; /* Cabeçalho fixo */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 24px;
             margin: 0;
         }
-        header p {
-            font-size: 16px;
-            margin-top: 5px;
+        .content {
+            padding: 80px 20px 70px; /* Ajusta espaço para o header e o footer */
+        }
+        .profile-post {
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .profile-post img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .profile-post button {
+            background-color: #6A0DAD;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .profile-post button:hover {
+            background-color: #540c9b;
         }
         nav {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #4b0082; /* Um tom mais escuro de roxo */
+            background-color: #4b0082;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
@@ -38,101 +67,54 @@
         nav a {
             text-decoration: none;
             color: #fff;
-            font-size: 14px;
+            font-size: 12px;
             text-align: center;
         }
         nav a i {
             font-size: 24px;
             display: block;
-            margin-bottom: 5px;
-        }
-        .container {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .container h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .login-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 400px;
-            text-align: left;
-        }
-        .login-popup input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .login-popup button {
-            width: 100%;
-            padding: 10px;
-            background-color: #6A0DAD;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .login-popup button:hover {
-            background-color: #540c9b;
-        }
-        .login-popup .close-btn {
-            display: block;
-            text-align: right;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #6A0DAD;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <h1>CriAtiva</h1>
-        <p>Conectando Marcas e Criadores</p>
     </header>
-    <div class="container">
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <!-- Postagem oficial fixa -->
+        <div class="profile-post">
+            <h2>@Criativa.com</h2>
+            <p>Bem-vindo à CriAtiva! Conectando marcas e criadores.</p>
+            <img src="https://via.placeholder.com/300" alt="Post oficial">
+            <div>
+                <button>Curtir</button>
+                <button>Comentar</button>
+                <button>Compartilhar</button>
+            </div>
+        </div>
+
+        <!-- Placeholder para postagens de usuários -->
+        <div class="profile-post">
+            <h2>@Usuario1</h2>
+            <p>Essa é uma postagem de exemplo!</p>
+            <img src="https://via.placeholder.com/300" alt="Post do usuário">
+            <div>
+                <button>Curtir</button>
+                <button>Comentar</button>
+                <button>Compartilhar</button>
+            </div>
+        </div>
     </div>
+
+    <!-- Barra de navegação -->
     <nav>
         <a href="#"><i>🏠</i>Início</a>
-        <a href="#"><i>🔍</i>Pesquisa</a>
-        <a href="#" id="profile-icon"><i>👤</i>Perfil</a>
+        <a href="#"><i>📩</i>Mensagens</a>
         <a href="#"><i>🔔</i>Notificações</a>
+        <a href="#"><i>👤</i>Perfil</a>
     </nav>
-    <div class="login-popup" id="login-popup">
-        <p><b>Faça login ou crie sua conta</b></p>
-        <input type="text" placeholder="Usuário ou Email">
-        <input type="password" placeholder="Senha">
-        <button>Entrar</button>
-        <button>Criar Conta</button>
-        <span class="close-btn" id="close-popup">Fechar</span>
-    </div>
-    <script>
-        const profileIcon = document.getElementById("profile-icon");
-        const loginPopup = document.getElementById("login-popup");
-        const closePopup = document.getElementById("close-popup");
-
-        profileIcon.addEventListener("click", () => {
-            loginPopup.style.display = "block";
-        });
-
-        closePopup.addEventListener("click", () => {
-            loginPopup.style.display = "none";
-        });
-    </script>
 </body>
 </html>
